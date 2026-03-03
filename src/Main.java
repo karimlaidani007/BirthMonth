@@ -17,27 +17,21 @@ public class Main {
         // Else:
         //      Read bad input as trash string
         //      Output error message and stop
-        Scanner in = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        int month = 0;
-        String trash = "";
+        int month;
 
         System.out.print("Enter your birth month (1-12): ");
+        month = input.nextInt();
 
-        if (in.hasNextInt()) {
-            month = in.nextInt();
-            in.nextLine(); // clear buffer
-
-            if (month >= 1 && month <= 12) {
-                System.out.println("Your birth month is: " + month);
-            } else {
-                System.out.println("You entered an incorrect month value: " + month);
-            }
-
-        } else {
-            trash = in.nextLine(); // read bad input safely
-            System.out.println("\nYou entered: " + trash);
-            System.out.println("Run the program again and enter a whole number from 1 to 12!");
+        if (month >= 1 && month <= 12) {
+            System.out.println("Your birth month is: " + month);
         }
+        else
+        {
+            System.out.println("You entered an incorrect month value: " + month);
+        }
+
+        input.close();
     }
 }
